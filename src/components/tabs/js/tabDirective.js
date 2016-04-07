@@ -68,7 +68,7 @@ function MdTab () {
 
         if (body.length == 0) {
           var contents = element.contents().detach();
-          body         = angular.element('<md-tab-body></md-tab-body>');
+          body         = angular.element('<md-tab-body class="_md"></md-tab-body>');
           body.append(contents);
         }
       }

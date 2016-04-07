@@ -806,6 +806,7 @@ function OptionDirective($mdButtonInkRipple, $mdUtil) {
       }, setOptionValue);
     }
 
+    attr.$addClass('_md');     // private md component indicator for styling
     attr.$observe('disabled', function(disabled) {
       if (disabled) {
         element.attr('tabindex', '-1');

@@ -51,6 +51,8 @@ function MdDialogDirective($$rAF, $mdTheming, $mdDialog) {
   return {
     restrict: 'E',
     link: function(scope, element, attr) {
+      attr.$addClass('_md');     // private md component indicator for styling
+
       $mdTheming(element);
       $$rAF(function() {
         var images;

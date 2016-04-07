@@ -103,7 +103,9 @@ function GridListDirective($interpolate, $mdConstant, $mdGridLayout, $mdMedia) {
     link: postLink
   };
 
-  function postLink(scope, element, attrs, ctrl) {
+  function postLink(scope, element, attr, ctrl) {
+    attr.$addClass('_md');     // private md component indicator for styling
+    
     // Apply semantics
     element.attr('role', 'list');
 

@@ -17,6 +17,8 @@ function MdBottomSheetDirective($mdBottomSheet) {
   return {
     restrict: 'E',
     link : function postLink(scope, element, attr) {
+      attr.$addClass('_md');     // private md component indicator for styling
+
       // When navigation force destroys an interimElement, then
       // listen and $destroy() that interim instance...
       scope.$on('$destroy', function() {

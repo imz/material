@@ -53,6 +53,8 @@ function SliderContainerDirective() {
         }
 
         var stopDisabledWatch = angular.noop;
+
+        attr.$addClass('_md');     // private md component indicator for styling
         if (attr.disabled) {
           setDisable(true);
         }

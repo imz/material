@@ -49,7 +49,7 @@ function mdContentDirective($mdTheming) {
     restrict: 'E',
     controller: ['$scope', '$element', ContentController],
     link: function(scope, element, attr) {
-      var node = element[0];
+      attr.$addClass('_md');     // private md component indicator for styling
 
       $mdTheming(element);
       scope.$broadcast('$mdContentLoaded', element);
