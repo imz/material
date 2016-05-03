@@ -133,7 +133,9 @@
    *    the delete key will remove the chip.
    * @param {string=} delete-button-label A label for the delete button. Also hidden and read by
    *    screen readers.
-   * @param {expression=} md-separator-keys An array of key codes used to separate chips.
+   * @param {expression=} md-separator-keys An array of keys used to separate chips. Each entry is
+   *     either a numeric key code (triggering on keydown, ignoring modifiers) or a length-one
+   *     string (matching that keypress).
    * @param {string=} md-chip-append-delay The number of milliseconds that the component will select
    *    a newly appended chip before allowing a user to type into the input. This is **necessary**
    *    for keyboard accessibility for screen readers. It defaults to 300ms and any number less than
@@ -221,6 +223,7 @@
             ng-model="$mdChipsCtrl.chipBuffer"\
             ng-focus="$mdChipsCtrl.onInputFocus()"\
             ng-blur="$mdChipsCtrl.onInputBlur()"\
+            ng-keypress="$mdChipsCtrl.inputKeypress($event)"\
             ng-keydown="$mdChipsCtrl.inputKeydown($event)">';
 
   var CHIP_DEFAULT_TEMPLATE = '\
